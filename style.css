@@ -1,38 +1,102 @@
+/* ----- Style général ----- */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f2f2f2;
   margin: 0;
   padding: 0;
-  background: #f8f9fa;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #222;
 }
 
-nav {
-  background: #2c3e50;
-  padding: 10px;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  margin: 0;
-  padding: 0;
-}
-
-nav li {
-  margin: 0 15px;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-nav a:hover {
-  text-decoration: underline;
-}
-
+/* ----- En-tête ----- */
 header {
   text-align: center;
-  padding: 50px;
+  background-color: #ffffff;
+  padding: 30px 10px;
+  color: #1c4e2b;
+  border-bottom: 3px solid #2e8b57;
+}
+
+h1 {
+  font-size: 2.2em;
+  margin-bottom: 0;
+}
+
+/* ----- Contenu principal ----- */
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 40px;
+  gap: 40px;
+}
+
+/* ----- Colonne gauche (photo) ----- */
+.photo-container {
+  text-align: center;
+  max-width: 300px;
+}
+
+.photo-container img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+}
+
+.address {
+  margin-top: 10px;
+  font-size: 0.9em;
+  color: #444;
+}
+
+/* ----- Colonne droite ----- */
+.right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 600px;
+}
+
+.about, .skills, .contact {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+/* ----- Titres secondaires ----- */
+h2 {
+  color: #1c4e2b;
+  border-bottom: 2px solid #2e8b57;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+  font-size: 1.4em;
+}
+
+/* ----- Responsive pour téléphone ----- */
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .top-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .photo-container {
+    max-width: 80%;
+  }
+
+  .right-column {
+    width: 90%;
+  }
+
+  header {
+    padding-bottom: 60px;
+  }
 }
