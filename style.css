@@ -85,6 +85,18 @@ h2 {
   margin-bottom: 15px;
   font-size: 1.4em;
 }
+/* ----- Liens du menu de navigation ----- */
+nav a {
+  font-size: 18px; /* 👈 Agrandit le texte */
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
 
 /* ----- Responsive pour téléphone ----- */
 @media (max-width: 768px) {
