@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Ezekiel TANO - Home</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       background-color: #f2f2f2;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #222;
     }
 
     header {
@@ -39,26 +42,36 @@
     main.content {
       padding: 40px;
       display: flex;
-      flex-direction: column;
-      align-items: center;
+      flex-direction: row;
+      justify-content: center;
+      gap: 60px;
     }
 
-    .top-section {
+    .left-column {
       display: flex;
-      gap: 40px;
-      align-items: flex-start;
-      max-width: 1000px;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+      max-width: 300px;
+      width: 100%;
+    }
+
+    .photo-container {
+      text-align: center;
+      width: 100%;
     }
 
     .photo-container img {
-      max-width: 250px;
-      border-radius: 10px;
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
     }
 
     .address {
       margin-top: 10px;
       font-style: italic;
-      font-size: 14px;
+      font-size: 0.9em;
+      color: #444;
       text-align: center;
     }
 
@@ -66,7 +79,7 @@
       display: flex;
       flex-direction: column;
       gap: 30px;
-      flex: 1; /* 🟢 garantit même largeur pour les blocs à droite */
+      width: 600px;
     }
 
     .about, .skills, .contact {
@@ -74,7 +87,7 @@
       padding: 20px;
       border-radius: 10px;
       box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-      width: 100%; /* 🟢 même largeur */
+      width: 100%;
     }
 
     h2 {
@@ -82,14 +95,33 @@
       border-bottom: 2px solid #004d26;
       padding-bottom: 5px;
       margin-bottom: 15px;
+      font-size: 1.4em;
     }
 
     p {
       text-align: justify;
       line-height: 1.6;
     }
+
+    @media (max-width: 768px) {
+      main.content {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+      }
+
+      .left-column,
+      .right-column {
+        width: 90%;
+      }
+
+      header {
+        padding-bottom: 60px;
+      }
+    }
   </style>
 </head>
+
 <body>
   <header>
     <h1>Welcome to my website!</h1>
@@ -97,44 +129,50 @@
       <a href="index.html">Home</a>
       <a href="teaching.html">Teaching</a>
       <a href="research.html">Research</a>
-      <!-- 🔴 Contact retiré du menu -->
     </nav>
   </header>
 
   <main class="content">
-    <div class="top-section">
+    <!-- Colonne gauche -->
+    <div class="left-column">
       <div class="photo-container">
-        <img src="images/photo.jpg" alt="Ezekiel TANO">
+        <img src="images/photo.jpg" alt="Ezekiel TANO" />
         <p class="address">
-          FRANCE, 59e Boulevard Paris 75014<br>
+          FRANCE, 59e Boulevard Paris 75014<br />
           “Cité Internationale Universitaire de Paris”
         </p>
       </div>
 
-      <div class="right-column">
-        <div class="about">
-          <h2>About Me</h2>
-          <p>
-            I am currently pursuing a Master’s degree in Applied Economics (Public Policy and Development) at the Paris School of Economics. 
-            My academic and research interests lie in applied econometrics, climate change economics, macroeconomic analysis and policymaking, 
-            and financing development. I hold an MSc in Economics and Statistics from ENSEA Abidjan, where I gained expertise in economic modeling, 
-            data analysis, and statistical forecasting. <br><br>
-<a href="documents/CV_Ezekiel_TANO.pdf" target="_blank" style="color: #004d26; font-weight: bold;">
-  📄 View my CV
-</a>
-          </p>
-        </div>
+      <div class="contact">
+        <h2>Contact</h2>
+        <p>You can reach me via:</p>
+        <ul>
+          <li>Email: <a href="mailto:ezekiel.tano@example.com">ezekiel.tano@example.com</a></li>
+          <li>LinkedIn: <a href="https://linkedin.com/in/ezekieltano" target="_blank">linkedin.com/in/ezekieltano</a></li>
+          <li>GitHub: <a href="https://github.com/ezekieltano" target="_blank">github.com/ezekieltano</a></li>
+          <li>Facebook: <a href="https://facebook.com/ton_identifiant_facebook" target="_blank">facebook.com/ton_identifiant_facebook</a></li>
+        </ul>
+      </div>
+    </div>
 
-        <div class="skills">
-          <h2>Technical Skills</h2>
-          <p>
-            I am proficient in <strong>R</strong> and <strong>LaTeX</strong>. Through my experience in projects and research during my academic training, 
-            I have developed strong analytical skills that enable me to contribute effectively to data-driven policy analysis and decision-making 
-            in areas related to development economics and public policy.
-          </p>
-          <p><strong>Thank you for visiting my site!</strong></p>
-        </div>
+    <!-- Colonne droite -->
+    <div class="right-column">
+      <div class="about">
+        <h2>About Me</h2>
+        <p>
+          I am currently pursuing a Master’s degree in Applied Economics (Public Policy and Development) at the Paris School of Economics. 
+          My academic and research interests lie in applied econometrics, climate change economics, macroeconomic analysis and policymaking, 
+          and financing development. I hold an MSc in Economics and Statistics from ENSEA Abidjan, where I gained expertise in economic modeling, 
+          data analysis, and statistical forecasting.
+        </p>
+        <p>
+          <a href="documents/CV_Ezekiel_TANO.pdf" target="_blank" style="color: #004d26; font-weight: bold;">
+            📄 View my CV
+          </a>
+        </p>
+      </div>
 
+<<<<<<< HEAD
         <div class="contact">
           <h2>Contact</h2>
           <p>You can reach me via:</p>
@@ -145,6 +183,16 @@
             <li>Facebook: <a href="https://facebook.com/ezekieltano" target="_blank">facebook.com/Ezékiel Tano</a></li>
           </ul>
         </div>
+=======
+      <div class="skills">
+        <h2>Technical Skills</h2>
+        <p>
+          I am proficient in <strong>R</strong> and <strong>LaTeX</strong>. Through my experience in projects and research during my academic training, 
+          I have developed strong analytical skills that enable me to contribute effectively to data-driven policy analysis and decision-making 
+          in areas related to development economics and public policy.
+        </p>
+        <p><strong>Thank you for visiting my site!</strong></p>
+>>>>>>> bff81c0 (Mise à jour de la page index.html)
       </div>
     </div>
   </main>
